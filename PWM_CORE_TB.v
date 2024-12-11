@@ -19,6 +19,8 @@ module PWM_CORE_tb;
     wire [15:0] period_minus_1;
     wire [15:0] counter;
 
+
+
     // Instantiate the Unit Under Test (UUT)
     PWM_CORE uut (
         .clk(clk), 
