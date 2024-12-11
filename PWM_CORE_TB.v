@@ -44,7 +44,6 @@ module PWM_CORE_tb;
         reset = 0;
 
         // Test Case 1: Basic PWM operation
-        #15;
         enable = 1; // Start PWM
         // Test Case 2: Change duty cycle
         #20000;
@@ -54,15 +53,21 @@ module PWM_CORE_tb;
         #20000;
         period = 16'd200;
 
-        // Test Case 4: Stop PWM
+        // Test Case 4: change divisor
         #20000;
-        enable = 0; // Stop PWM
+        divisor = 16'd2;
 
-        // Test Case 5: Reset
-        #10000;
+        // Test Case 5: change divisor
+        #20000;
+        divisor = 16'd3;
+        // Test Case 6: Reset
+        #100;
         reset = 1;
         #100;
         reset = 0;
+        // Test Case 7: Disable PWM
+        #20000;
+        enable = 0;
 
         // Finish simulation
         #2000;
